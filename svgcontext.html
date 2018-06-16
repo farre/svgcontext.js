@@ -1,0 +1,61 @@
+<head>
+  <style>
+   .bordered { border:1px dashed pink; }
+  </style>
+</head>
+<script src="svgcontext.js"></script>
+<svg viewBox="0 0 300 150" id="mysvg" class="bordered" width="300" height="150">
+</svg>
+&nbsp;
+<canvas class="bordered" id="mycanvas" width="300" heigth="100"></canvas>
+<script>
+  function paint(context) {
+    context.fillRect(10,10,10,10);
+    context.fillStyle = 'blue';
+    context.fillRect(30,10,10,10);
+    context.fillStyle = 'red';
+    context.fillRect(50,10,10,10);
+
+    context.fillStyle = 'pink';
+    context.fillRect(5,25,60,20);
+
+    context.fillStyle = 'black';
+    context.strokeRect(10,30,10,10);
+    context.strokeStyle = 'blue';
+    context.strokeRect(30,30,10,10);
+    context.strokeStyle = 'red';
+    context.strokeRect(50,30,10,10);
+
+    context.fillStyle = 'pink';
+    context.fillRect(5,55,60,20);
+
+    context.fillStyle = 'black';
+    context.clearRect(10,60,10,10);
+    context.strokeStyle = 'blue';
+    context.clearRect(30,60,10,10);
+    context.strokeStyle = 'red';
+    context.clearRect(50,60,10,10);
+
+    context.fillText("Hello world", 10, 90);
+
+    context.font = "15px serif";
+    context.fillText("Hello world", 10, 110);
+
+    context.strokeRect(5, 115, 40, 20);
+    context.font = "15px serif";
+    context.fillText("Hello world", 10, 130, 30);
+
+    context.strokeRect(75, 5, 100, 20);
+    context.font = "15px serif";
+    context.fillText("Hello world", 80, 20, 100);
+
+    context.font = "30px serif";
+    context.strokeText("Hello world", 80, 50);
+  }
+
+  console.log('svg');
+  paint(document.getElementById('mysvg').getContext('svg'));
+  console.log('canvas');
+  paint(document.getElementById('mycanvas').getContext('2d'));
+
+</script>
